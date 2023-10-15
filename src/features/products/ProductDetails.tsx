@@ -17,7 +17,7 @@ import { AddToCartButton } from '@src/components/Cart/AddToCartButton';
 import { CustomBreadcrumb } from '@src/components/CustomBreadcrumb';
 import { Quantity } from '@src/components/Quantity/Quantity';
 import { Rating } from '@src/components/Rating';
-import { AppContext } from '@src/context/AppContext';
+
 import { defaultBreadCrumbItems, getSubstring } from '@src/helpers';
 import { IBreadcrumbItem, IProduct } from '@src/model';
 import React, { useContext, useState } from 'react';
@@ -30,7 +30,7 @@ interface ProductDetailsProps {
 
 export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const [quantity, setQuantity] = useState(1);
-  const { isAdded, addItem, resetItems } = useContext(AppContext);
+ 
 
   return (
     <>
@@ -87,7 +87,6 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
             setQuantity={(_valueAsString, valueAsNumber) =>
               setQuantity(valueAsNumber)
             }
-            disabled={isAdded('cart', product.id)}
           />
           <Divider my="1rem" />
           <Box>
@@ -102,10 +101,6 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                 mr="1rem"
                 my="0.5rem"
                 _hover={{ bgColor: 'none' }}
-                onClick={() => {
-                  resetItems('checkout');
-                  addItem('checkout', product, quantity);
-                }}
               >
                 Buy Now
               </Button>
