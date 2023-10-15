@@ -17,7 +17,6 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { AppContext } from '@src/context/AppContext';
 import { calculateItemsTotal, formatPrice, getSubstring } from '@src/helpers';
 import React, { useContext, useEffect, useState } from 'react';
 
@@ -25,16 +24,8 @@ export const Checkout = () => {
   const [subTotal, setSubTotal] = useState<number>(0);
   const [tax, setTax] = useState<number>(0);
 
-  const {
-    state: { checkout },
-  } = useContext(AppContext);
+  
 
-  useEffect(() => {
-    const subTotal = calculateItemsTotal(checkout);
-    const tax = 0.1 * subTotal;
-    setSubTotal(subTotal);
-    setTax(tax);
-  }, [checkout]);
   return (
     <Flex
       w={{ base: '100%', lg: '90%' }}
@@ -50,8 +41,7 @@ export const Checkout = () => {
 
           <CardBody>
             <Stack spacing="2rem">
-              {checkout.map((item) => (
-                <Flex key={item.id} align="center" justify="space-between">
+                <Flex align="center" justify="space-between">
                   <Flex align="center">
                    <Box>Image</Box>
                     <Box mx="1rem">
@@ -60,23 +50,20 @@ export const Checkout = () => {
                         fontSize={{ base: 'sm', lg: 'lg' }}
                         maxW="500px"
                       >
-                        {item.name}
                       </Text>
                       <Text color="gray.500">
-                        {getSubstring(item.description, 50)}
                       </Text>
                     </Box>
                   </Flex>
                   <Box textAlign="right">
                     <Text fontWeight="bold" fontSize={{ base: 'md', lg: 'lg' }}>
-                      Rs{formatPrice(item.price)}
+                      Rs
                     </Text>
                     <Text fontSize={{ base: 'sm', lg: 'md' }}>
-                      Quantity: {item.count}
+                      Quantity:
                     </Text>
                   </Box>
                 </Flex>
-              ))}
             </Stack>
           </CardBody>
         </Card>

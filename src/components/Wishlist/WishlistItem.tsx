@@ -1,5 +1,4 @@
 import { Button, Grid, GridItem, Image, Text } from '@chakra-ui/react';
-import { AppContext } from '@src/context/AppContext';
 import { getSubstring } from '@src/helpers';
 import { IItem } from '@src/model';
 import Link from 'next/link';
@@ -11,8 +10,6 @@ interface WishlistItemProps {
 }
 
 export const WishlistItem = ({ item }: WishlistItemProps) => {
-  const { addItem, removeItem, isAdded } = useContext(AppContext);
-
   return (
     <Grid
       alignItems="center"
@@ -49,7 +46,6 @@ export const WishlistItem = ({ item }: WishlistItemProps) => {
       </GridItem>
 
       <GridItem textAlign="right">
-        {isAdded('cart', item.id) ? (
           <Button
             size="xs"
             bgColor="white"
@@ -57,11 +53,9 @@ export const WishlistItem = ({ item }: WishlistItemProps) => {
             borderColor="gray.300"
             color="gray.500"
             title="Remove from Cart"
-            onClick={() => removeItem('cart', item.id)}
           >
             <BsCartX />
           </Button>
-        ) : (
           <Button
             size="xs"
             bgColor="white"
@@ -69,11 +63,10 @@ export const WishlistItem = ({ item }: WishlistItemProps) => {
             borderColor="brand.primary"
             color="brand.primary"
             title="Add to Cart"
-            onClick={() => addItem('cart', item)}
           >
             <BsCart />
           </Button>
-        )}
+        
       </GridItem>
 
       <GridItem textAlign="right">
@@ -81,7 +74,6 @@ export const WishlistItem = ({ item }: WishlistItemProps) => {
           variant="ghost"
           colorScheme="red"
           size="xs"
-          onClick={() => removeItem('wishlist', item.id)}
         >
           <BsTrash />
         </Button>

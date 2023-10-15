@@ -8,7 +8,6 @@ import {
   Input,
   Text,
 } from '@chakra-ui/react';
-import { AppContext } from '@src/context/AppContext';
 import { IItem } from '@src/model';
 import Link from 'next/link';
 import { useContext } from 'react';
@@ -19,8 +18,7 @@ interface CartItemProps {
 }
 
 export const CartItem = ({ item }: CartItemProps) => {
-  const { increaseCount, decreaseCount, removeItem } = useContext(AppContext);
-
+ 
   return (
     <Grid
       alignItems="center"
@@ -41,7 +39,6 @@ export const CartItem = ({ item }: CartItemProps) => {
       </GridItem>
       <GridItem colSpan={{ base: 3, lg: 2 }} justifyContent="flex-end">
         <HStack my="0.5rem" justifyContent="flex-end">
-          <Button onClick={() => decreaseCount('cart', item.id)}>-</Button>
           <Input
             type="number"
             value={item.count}
@@ -51,7 +48,6 @@ export const CartItem = ({ item }: CartItemProps) => {
             min="1"
             max="20"
           />
-          <Button onClick={() => increaseCount('cart', item.id)}>+</Button>
         </HStack>
       </GridItem>
       <GridItem textAlign="right" colSpan={{ base: 2, lg: 1 }}>
@@ -61,7 +57,6 @@ export const CartItem = ({ item }: CartItemProps) => {
         <Button
           variant="ghost"
           colorScheme="red"
-          onClick={() => removeItem('cart', item.id)}
         >
           <BsTrash />
         </Button>
