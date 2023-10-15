@@ -12,7 +12,6 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
-import { AppContext } from '@src/context/AppContext';
 import { calculateItemsTotal } from '@src/helpers';
 import Link from 'next/link';
 import { useContext, useRef } from 'react';
@@ -20,23 +19,11 @@ import { BsCart4 } from 'react-icons/bs';
 import { CartItem } from './CartItem';
 
 export const Cart = () => {
-  const {
-    state: { cart },
-    resetItems,
-    addItem,
-  } = useContext(AppContext);
-
+ 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<any>();
 
-  const handleCheckout = () => {
-    resetItems('checkout');
-    cart.forEach((cartItem) => {
-      addItem('checkout', cartItem, cartItem.count);
-    });
 
-    onClose();
-  };
 
   return (
     <>
@@ -51,7 +38,7 @@ export const Cart = () => {
         pos="relative"
       >
          <Text mx="1">Contact</Text>
-        {cart.length !== 0 && (
+       
           <Flex
             pos="absolute"
             top="0px"
@@ -64,9 +51,9 @@ export const Cart = () => {
             align="center"
             justify="center"
           >
-            {cart.length}
+           
           </Flex>
-        )}
+    
       </Button>
       <Drawer
         isOpen={isOpen}
@@ -79,22 +66,22 @@ export const Cart = () => {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader color="brand.primary">
-            Cart ( {cart.length} Items )
+            Cart  Items 
           </DrawerHeader>
           <DrawerBody>
-            {cart.length === 0 ? (
+           
               <>Your Cart is Empty</>
-            ) : (
-              cart.map((item) => <CartItem key={item.id} item={item} />)
-            )}
+           
+              
+           
           </DrawerBody>
-          {cart.length !== 0 && (
+          
             <DrawerFooter justifyContent="space-between">
               <Box>
                 <Button
                   variant="outline"
                   mr={3}
-                  onClick={() => resetItems('cart')}
+                  
                 >
                   Clear Cart
                 </Button>
@@ -108,15 +95,15 @@ export const Cart = () => {
                     _active={{
                       bgColor: 'brand.primaryLight',
                     }}
-                    onClick={handleCheckout}
+                   
                   >
                     Checkout
                   </Button>
                 </Link>
               </Box>
-              <Box fontWeight="bold">Total: Rs {calculateItemsTotal(cart)}</Box>
+              <Box fontWeight="bold">Total: Rs </Box>
             </DrawerFooter>
-          )}
+        
         </DrawerContent>
       </Drawer>
     </>
