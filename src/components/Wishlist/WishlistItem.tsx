@@ -30,6 +30,7 @@ export const WishlistItem = ({ item }: WishlistItemProps) => {
             rounded="full"
             borderWidth="1px"
             borderColor="gray.300"
+            alt='wishlist'
           />
         </Link>
       </GridItem>

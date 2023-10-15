@@ -53,11 +53,7 @@ export const Checkout = () => {
               {checkout.map((item) => (
                 <Flex key={item.id} align="center" justify="space-between">
                   <Flex align="center">
-                    <Image
-                      src={item.mainImage}
-                      boxSize="100px"
-                      bgSize="contain"
-                    />
+                   <Box>Image</Box>
                     <Box mx="1rem">
                       <Text
                         fontWeight="bold"

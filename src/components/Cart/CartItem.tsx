@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Grid,
   GridItem,
@@ -30,13 +31,7 @@ export const CartItem = ({ item }: CartItemProps) => {
     >
       <GridItem>
         <Link href={`/products/${item.slug}`}>
-          <Image
-            src={item.mainImage}
-            boxSize="40px"
-            rounded="full"
-            borderWidth="1px"
-            borderColor="gray.300"
-          />
+        <Box>Images</Box>
         </Link>
       </GridItem>
       <GridItem colSpan={{ base: 5, lg: 3 }}>
