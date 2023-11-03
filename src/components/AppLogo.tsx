@@ -1,16 +1,13 @@
-import { Text } from '@chakra-ui/react';
-import Link from 'next/link';
-import React from 'react';
+import { Text } from "@chakra-ui/react";
+import Link from "next/link";
+import React from "react";
+import Image from "next/image";
+import Logo from "../../public/logo.png";
 
 export const AppLogo = () => {
   return (
     <Link href="/">
-      <Text color="gray.800" fontWeight="bold">
-        SW{' '}
-        <Text as="span" color={"#febe60"}>
-          Works
-        </Text>
-      </Text>
+      <Image src={Logo} alt="logo" height={100} width={160} />
     </Link>
   );
 };
