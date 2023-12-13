@@ -8,7 +8,7 @@ interface IHeroProps {
   description: string;
   imageUrl: string;
   btnLabel?: string;
-  btnLink: string;
+  btnLink?: string; // Make btnLink optional as well
 }
 
 export const Hero = ({
@@ -29,15 +29,21 @@ export const Hero = ({
       mx="auto"
       shadow="sm"
       p="2rem"
+      pt="28"
       mb="2rem"
     >
       <Box mx="2rem" w={{ base: "100%", md: "50%" }}>
         <Heading size="2xl">{heading}</Heading>
         <Text py="1rem">{description}</Text>
 
-        <Link href={btnLink}>
-          <Button variant="outline">{btnLabel}</Button>
-        </Link>
+        {btnLabel &&
+          btnLink && ( // Check if btnLabel and btnLink are provided
+            <Box py="1rem">
+              <Link href={btnLink}>
+                <Button variant="">{btnLabel}</Button>
+              </Link>
+            </Box>
+          )}
       </Box>
       <Box mx="2rem" w={{ base: "100%", md: "50%" }} mt="1rem">
         <Image
