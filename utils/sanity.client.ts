@@ -5,7 +5,7 @@ export const clientConfig: ClientConfig = {
   dataset: 'production',
   useCdn: false,
   apiVersion: '2023-03-23',
-  token:"skfDOXGryrIeLRG8696qjP64IgOYK2FRY5JpdJwUYDhshgrfaV3YzMWPeVatS2fvnJTr5lpsEoBoXUhfRSmIjTloK6jXTyfhqoiaTfUgrKoOwDAyXanvW0cUIfttuWtvsvw9BEjwOyv3QyprfS8v8MjQOuSU7we5p3ooGBfqSMlu33RBUaVD"
+  token:process.env.NEXT_PUBLIC_SANITY_TOKEN || "skfDOXGryrIeLRG8696qjP64IgOYK2FRY5JpdJwUYDhshgrfaV3YzMWPeVatS2fvnJTr5lpsEoBoXUhfRSmIjTloK6jXTyfhqoiaTfUgrKoOwDAyXanvW0cUIfttuWtvsvw9BEjwOyv3QyprfS8v8MjQOuSU7we5p3ooGBfqSMlu33RBUaVD"
 };
 
 export const client = createClient(clientConfig);
