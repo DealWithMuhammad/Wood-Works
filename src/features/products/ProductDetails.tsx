@@ -1,4 +1,5 @@
 "use client";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -12,14 +13,14 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { AddToWishlistButton } from "@src/components/AddToWishlistButton";
 import { AddToCartButton } from "@src/components/Cart/AddToCartButton";
 import { CustomBreadcrumb } from "@src/components/CustomBreadcrumb";
 import { Quantity } from "@src/components/Quantity/Quantity";
 import { Rating } from "@src/components/Rating";
-
+import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { defaultBreadCrumbItems, getSubstring } from "@src/helpers";
 import { IBreadcrumbItem, IProduct } from "@src/model";
-import React, { useContext, useState } from "react";
 
 interface ProductDetailsProps {
   product: IProduct;
@@ -27,7 +28,40 @@ interface ProductDetailsProps {
 
 export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const [quantity, setQuantity] = useState(1);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const handleImageChange = (direction: "next" | "prev") => {
+    const lastIndex = product.gallery.length - 1;
+    let newIndex;
+
+    if (direction === "next") {
+      newIndex = currentImageIndex === lastIndex ? 0 : currentImageIndex + 1;
+    } else {
+      newIndex = currentImageIndex === 0 ? lastIndex : currentImageIndex - 1;
+    }
+
+    setCurrentImageIndex(newIndex);
+  };
+
+  const handleGalleryImageClick = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
+  const galleryImages = product.gallery?.map((image, i) => (
+    <Image
+      key={i}
+      src={image}
+      alt={product.name}
+      boxSize="70px"
+      rounded="md"
+      shadow="sm"
+      borderWidth="1px"
+      borderColor="gray.100"
+      opacity={i === currentImageIndex ? 1 : 0.6}
+      onClick={() => handleGalleryImageClick(i)}
+      cursor="pointer"
+    />
+  ));
   return (
     <>
       <CustomBreadcrumb
@@ -45,29 +79,42 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
       />
       <Grid
         templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(2, 1fr)" }}
-        w={{ base: "100%", lg: "90%" }}
+        w={{ base: "90%", lg: "90%" }}
         mx="auto"
         p="2rem"
         gap="20"
       >
-        <GridItem p="1rem" pos="relative">
-          <Image src={product?.mainImage} alt={product.name} mx="auto" />
-          {/* TODO: fix product gallery */}
-          <Flex>
-            {product.gallery?.length !== 0 &&
-              product.gallery?.map((image, i) => (
-                <Image
-                  key={i}
-                  src={image}
-                  alt={product.name}
-                  mx="auto"
-                  boxSize="70px"
-                  rounded="md"
-                  shadow="sm"
-                  borderWidth="1px"
-                  borderColor="gray.100"
-                />
-              ))}
+        <GridItem pos="relative">
+          {/* Always display the main image */}
+          <Flex m="0px" p="0px" alignItems="center">
+            <Box
+              position="relative"
+              left="40px"
+              onClick={() => handleImageChange("prev")}
+              cursor="pointer"
+              p="4"
+              bg="blackAlpha.500"
+            >
+              <ArrowBackIcon boxSize="30px" color="white" />
+            </Box>
+            <Image
+              m="0px"
+              p="0px"
+              zIndex="-1"
+              src={product?.gallery[currentImageIndex] || product?.mainImage}
+              alt={product.name}
+              boxSize={{ base: "100%", sm: "90%", md: "100%", lg: "100%" }}
+            />
+            <Box
+              position="relative"
+              right="40px"
+              onClick={() => handleImageChange("next")}
+              cursor="pointer"
+              p="4"
+              bg="blackAlpha.500"
+            >
+              <ArrowForwardIcon boxSize="30px" color="white" />
+            </Box>
           </Flex>
         </GridItem>
         <GridItem p="1rem">

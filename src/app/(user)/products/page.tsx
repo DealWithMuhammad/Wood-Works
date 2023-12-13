@@ -1,8 +1,8 @@
-import { Hero } from '@src/components/Hero/Hero';
-import { AllProducts } from '@src/features/products';
-import { IProduct } from '@src/model';
-import { client } from '@utils/sanity.client';
-import { groq } from 'next-sanity';
+import { Hero } from "@src/components/Hero/Hero";
+import { AllProducts } from "@src/features/products";
+import { IProduct } from "@src/model";
+import { client } from "@utils/sanity.client";
+import { groq } from "next-sanity";
 
 const getAllProductsQueries: string = `
     *[_type == "product"] {
