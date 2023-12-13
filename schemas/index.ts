@@ -1,4 +1,5 @@
 import { CategorySchema } from './category-schema';
+import { Contact } from './contact-schema';
 import { GalleryImageSchema } from './gallery-image-schema';
 import { ProductSchema } from './product-schema';
 import { FeaturedProductsAndCategories } from './top-categories-schema';
@@ -8,4 +9,5 @@ export const schemaTypes = [
   GalleryImageSchema,
   ProductSchema,
   FeaturedProductsAndCategories,
+  Contact,
 ];

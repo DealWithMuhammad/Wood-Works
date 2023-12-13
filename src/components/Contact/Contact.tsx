@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+// Import necessary packages and components
+import React, { useState, ChangeEvent } from "react";
 import {
   Box,
   Button,
@@ -8,23 +9,84 @@ import {
   CardHeader,
   Divider,
   Flex,
-  FormControl,
-  FormLabel,
   Heading,
-  Image,
   Input,
   InputGroup,
-  InputLeftAddon,
   InputLeftElement,
-  Radio,
-  RadioGroup,
   Stack,
   Text,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import { PhoneIcon } from "@chakra-ui/icons";
+import { client } from "@utils/sanity.client";
 
-function Contact() {
+// Define the Contact component
+const Contact: React.FC = () => {
+  // State to manage form data
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  // Toast for success message
+  const toast = useToast();
+
+  // Function to handle form submission
+  const handleSubmit = async () => {
+    try {
+      // Use Sanity client to create a new document in the 'contact' collection
+      await client.create({
+        _type: "contact",
+        ...formData,
+      });
+
+      // Optionally, you can reset the form data after successful submission
+      setFormData({
+        username: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+
+      // Display success message
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you soon.",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
+
+      console.log("Form submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+
+      // Display error message if submission fails
+      toast({
+        title: "Error",
+        description: "Failed to submit the form. Please try again.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+  };
+
+  // Function to handle input changes
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Render the component
   return (
     <Flex
       w={{ base: "100%", lg: "90%" }}
@@ -32,6 +94,7 @@ function Contact() {
       flexDir={{ base: "column", lg: "row" }}
       gap="2rem"
     >
+      {/* ... your existing JSX code */}
       <Box w={{ base: "100%", lg: "40%" }}>
         <Card borderWidth="1px" borderColor="gray.200" shadow="none" p="2rem">
           <Heading pl="14px" size="xl">
@@ -71,6 +134,8 @@ function Contact() {
           </CardBody>
         </Card>
       </Box>
+
+      {/* Updated form section with added event handlers */}
       <Stack spacing={10} w={{ base: "100%", lg: "60%" }}>
         <Card borderWidth="1px" borderColor="gray.200" shadow="none">
           <CardHeader>
@@ -79,23 +144,47 @@ function Contact() {
 
           <CardBody>
             <Stack spacing="2rem">
+              {/* ... other form fields */}
               <Box>
-                <Input type="text" placeholder="Name" />
+                <Input
+                  type="text"
+                  placeholder="Name"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleInputChange}
+                />
               </Box>
               <Box>
                 <InputGroup>
                   <InputLeftElement pointerEvents="none">
                     <PhoneIcon color="gray.300" />
                   </InputLeftElement>
-                  <Input type="tel" placeholder="Phone number" />
+                  <Input
+                    type="tel"
+                    placeholder="Phone number"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                  />
                 </InputGroup>
               </Box>
-
               <Box>
-                <Input type="email" placeholder="E-mail" />
+                <Input
+                  type="email"
+                  placeholder="E-mail"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
               </Box>
               <Box>
-                <Textarea placeholder="Message" rows={8} />
+                <Textarea
+                  placeholder="Message"
+                  rows={8}
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                />
               </Box>
               <Button
                 size="md"
@@ -104,6 +193,7 @@ function Contact() {
                 colorScheme="blue"
                 border="2px"
                 borderColor="white"
+                onClick={handleSubmit}
               >
                 Submit
               </Button>
@@ -113,6 +203,7 @@ function Contact() {
       </Stack>
     </Flex>
   );
-}
+};
 
+// Export the Contact component
 export default Contact;
