@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
   Box,
   Card,
@@ -7,12 +7,11 @@ import {
   Heading,
   Stack,
   Text,
-} from '@chakra-ui/react';
-import { getSubstring } from '@src/helpers';
-import { IProduct } from '@src/model';
-import Link from 'next/link';
-import { AddToWishlistButton } from './AddToWishlistButton';
-import { AddToCartButton } from './Cart/AddToCartButton';
+} from "@chakra-ui/react";
+import { getSubstring } from "@src/helpers";
+import { IProduct } from "@src/model";
+import Link from "next/link";
+import { AddToCartButton } from "./Cart/AddToCartButton";
 
 interface ProductCardProps {
   product: IProduct;
@@ -21,10 +20,9 @@ interface ProductCardProps {
 export const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Card w="xs" pos="relative" m="0.5rem">
-      <AddToWishlistButton product={product} />
       <CardBody>
         <Link href={`/products/${product.slug}`}>
-          <Box 
+          <Box
             bg={`center / contain no-repeat url(${product.mainImage})`}
             borderRadius="lg"
             boxSize="200px"
@@ -43,7 +41,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           </Flex>
           <Text fontSize="sm"> {getSubstring(product.description, 30)} </Text>
 
-          <AddToCartButton product={product} /> 
+          <AddToCartButton product={product} />
         </Stack>
       </CardBody>
     </Card>

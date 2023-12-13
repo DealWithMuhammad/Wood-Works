@@ -9,6 +9,14 @@ export const navItems: NavItem[] = [
     label: 'Categories',
     href: '/categories',
   },
+      {
+    label: 'About',
+    href: '/about',
+  },
+    {
+    label: 'Contact',
+    href: '/contact-us',
+  },
 ];
 
 export  const defaultBreadCrumbItems: IBreadcrumbItem[] = [
@@ -19,6 +27,14 @@ export  const defaultBreadCrumbItems: IBreadcrumbItem[] = [
   {
     name: 'Categories',
     link: '/categories',
+  },
+   {
+    name: 'About',
+    link: '/about',
+  },
+  {
+    name: 'Contact Us',
+    link: '/contact-us',
   },
 ];
 

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
   Box,
   Button,
@@ -11,26 +11,22 @@ import {
   Link,
   Stack,
   Text,
-} from '@chakra-ui/react';
-import { AddToWishlistButton } from '@src/components/AddToWishlistButton';
-import { AddToCartButton } from '@src/components/Cart/AddToCartButton';
-import { CustomBreadcrumb } from '@src/components/CustomBreadcrumb';
-import { Quantity } from '@src/components/Quantity/Quantity';
-import { Rating } from '@src/components/Rating';
+} from "@chakra-ui/react";
+import { AddToCartButton } from "@src/components/Cart/AddToCartButton";
+import { CustomBreadcrumb } from "@src/components/CustomBreadcrumb";
+import { Quantity } from "@src/components/Quantity/Quantity";
+import { Rating } from "@src/components/Rating";
 
-import { defaultBreadCrumbItems, getSubstring } from '@src/helpers';
-import { IBreadcrumbItem, IProduct } from '@src/model';
-import React, { useContext, useState } from 'react';
+import { defaultBreadCrumbItems, getSubstring } from "@src/helpers";
+import { IBreadcrumbItem, IProduct } from "@src/model";
+import React, { useContext, useState } from "react";
 
 interface ProductDetailsProps {
   product: IProduct;
 }
 
-
-
 export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const [quantity, setQuantity] = useState(1);
- 
 
   return (
     <>
@@ -48,14 +44,13 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
         ]}
       />
       <Grid
-        templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }}
-        w={{ base: '100%', lg: '90%' }}
+        templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(2, 1fr)" }}
+        w={{ base: "100%", lg: "90%" }}
         mx="auto"
         p="2rem"
         gap="20"
       >
         <GridItem p="1rem" pos="relative">
-          <AddToWishlistButton product={product} />
           <Image src={product?.mainImage} alt={product.name} mx="auto" />
           {/* TODO: fix product gallery */}
           <Flex>
@@ -100,7 +95,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
                 w="160px"
                 mr="1rem"
                 my="0.5rem"
-                _hover={{ bgColor: 'none' }}
+                _hover={{ bgColor: "none" }}
               >
                 Buy Now
               </Button>
