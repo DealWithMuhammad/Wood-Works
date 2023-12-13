@@ -37,6 +37,8 @@ const Contact: React.FC = () => {
   // Function to handle form submission
   const handleSubmit = async () => {
     try {
+      console.log("Submitting form with data:", formData); // Log the form data
+
       // Use Sanity client to create a new document in the 'contact' collection
       await client.create({
         _type: "contact",
