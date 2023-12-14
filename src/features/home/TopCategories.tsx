@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
   Box,
   Button,
@@ -7,11 +7,11 @@ import {
   Grid,
   GridItem,
   Heading,
-} from '@chakra-ui/react';
-import { SectionHeading } from '@src/components/SectionHeading';
-import { ICategory } from '@src/model';
-import Image from 'next/image';
-import Link from 'next/link';
+} from "@chakra-ui/react";
+import { SectionHeading } from "@src/components/SectionHeading";
+import { ICategory } from "@src/model";
+import Image from "next/image";
+import Link from "next/link";
 
 interface TopCategoriesProps {
   categories: ICategory[];
@@ -19,14 +19,14 @@ interface TopCategoriesProps {
 
 export const TopCategories = ({ categories }: TopCategoriesProps) => {
   return (
-    <Box w={{ base: '100%', lg: '90%' }} mx="auto" py="3rem" px="2rem">
+    <Box w={{ base: "100%", lg: "90%" }} mx="auto" py="3rem" px="2rem">
       <SectionHeading title=" Shop Our Top Categories" />
 
       <Grid
         templateColumns={{
-          base: 'repeat(1, 1fr)',
-          md: 'repeat(2, 1fr)',
-          xl: 'repeat(4, 1fr)',
+          base: "repeat(1, 1fr)",
+          md: "repeat(2, 1fr)",
+          xl: "repeat(4, 1fr)",
         }}
         gap="4"
       >
@@ -60,24 +60,23 @@ interface TopCategoryCardProps {
 const TopCategoryCard = ({ category }: TopCategoryCardProps) => (
   <Link href={`/categories/${category.id}`}>
     <Card
-      direction="row"
+      direction="column"
       align="center"
       overflow="hidden"
       variant="outline"
       w="100%"
-      p="10px"
       h="100%"
-      _hover={{ cursor: 'pointer', bgColor: 'gray.100' }}
+      _hover={{ cursor: "pointer", bgColor: "gray.100" }}
     >
       <Image
         src={category.image}
         alt={category.name}
-        height={100}
-        width={100}
+        height={200}
+        width={300}
       />
 
       <CardBody>
-        <Heading size={{ base: 'sm', lg: 'md' }}>{category.name}</Heading>
+        <Heading size={{ base: "sm", lg: "md" }}>{category.name}</Heading>
       </CardBody>
     </Card>
   </Link>
