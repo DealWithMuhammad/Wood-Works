@@ -20,7 +20,8 @@ import {
 } from "@chakra-ui/react";
 import { PhoneIcon } from "@chakra-ui/icons";
 import { client } from "@utils/sanity.client";
-
+import { LiaWhatsapp } from "react-icons/lia";
+import Link from "next/link";
 // Define the Contact component
 const Contact: React.FC = () => {
   // State to manage form data
@@ -97,14 +98,29 @@ const Contact: React.FC = () => {
       gap="2rem"
     >
       {/* ... your existing JSX code */}
-      <Box w={{ base: "100%", lg: "40%" }}>
+      <Box w={{ base: "100%", lg: "45%" }}>
         <Card borderWidth="1px" borderColor="gray.200" shadow="none" p="2rem">
-          <Heading pl="14px" size="xl">
+          <Heading pl="12x" size="xl">
             Contact Us
           </Heading>
           <Divider mt="2rem" />
 
           <CardBody>
+            <Stack spacing="2rem">
+              <Box>
+                <Heading size="lg">Chat With Us:</Heading>
+                <Link
+                  href={`http://wa.me/+601139865270?text=Hi, I wanted to ask some questions about Shahzad Wood Works`}
+                >
+                  <Text color="green" fontSize="xl">
+                    Chat with us directly via WhatsApp by clicking here
+                  </Text>
+                  <LiaWhatsapp color="green" size={32} />
+                </Link>
+              </Box>
+            </Stack>
+            <Divider mt="2rem" />
+
             <Stack spacing="2rem">
               <Box>
                 <Heading size="lg">Call to Us:</Heading>
@@ -138,7 +154,7 @@ const Contact: React.FC = () => {
       </Box>
 
       {/* Updated form section with added event handlers */}
-      <Stack spacing={10} w={{ base: "100%", lg: "60%" }}>
+      <Stack spacing={10} w={{ base: "100%", lg: "55%" }}>
         <Card borderWidth="1px" borderColor="gray.200" shadow="none">
           <CardHeader>
             <Heading size="xl">We would love to hear from you.</Heading>

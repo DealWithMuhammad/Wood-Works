@@ -29,7 +29,7 @@ export const Hero = ({
       mx="auto"
       shadow="sm"
       p="2rem"
-      pt="28"
+      pt="40"
       mb="2rem"
     >
       <Box mx="2rem" w={{ base: "100%", md: "50%" }}>

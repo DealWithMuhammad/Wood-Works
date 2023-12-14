@@ -62,6 +62,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
       cursor="pointer"
     />
   ));
+
   return (
     <>
       <CustomBreadcrumb
@@ -125,14 +126,12 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
             Rs{product.price}
           </Text>
           <Divider my="1rem" />
-          <Quantity
-            setQuantity={(_valueAsString, valueAsNumber) =>
-              setQuantity(valueAsNumber)
-            }
-          />
-          <Divider my="1rem" />
           <Box>
-            <Link href="/">
+            <Link
+              href={`http://wa.me/+601139865270?text=Hi, I am interested in ${encodeURIComponent(
+                product.name
+              )} and I want to order it, can you share more details about it??, Thanks`}
+            >
               <Button
                 variant="outline"
                 bgColor="brand.primary"
@@ -151,6 +150,16 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           </Box>
 
           <Stack py="2rem">
+            <Box borderWidth={1} borderColor="gray.100" p="1rem">
+              <Text fontWeight="bold">Contact Us</Text>
+              <Link
+                href="http://wa.me/+601139865270"
+                textDecor="underline"
+                color="gray.500"
+              >
+                Contact to see if we can negotiate
+              </Link>
+            </Box>
             <Box borderWidth={1} borderColor="gray.100" p="1rem">
               <Text fontWeight="bold">Free Deliver</Text>
               <Link textDecor="underline" color="gray.500">
