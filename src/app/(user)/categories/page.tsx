@@ -1,8 +1,8 @@
-import { Hero } from '@src/components/Hero/Hero';
-import { AllCategories } from '@src/features/categories';
-import { ICategory } from '@src/model';
-import { client } from '@utils/sanity.client';
-import { groq } from 'next-sanity';
+import { Hero } from "@src/components/Hero/Hero";
+import { AllCategories } from "@src/features/categories";
+import { ICategory } from "@src/model";
+import { client } from "@utils/sanity.client";
+import { groq } from "next-sanity";
 
 const getAllCategoriesQueries = `
     *[_type == "category"] {
@@ -27,7 +27,7 @@ export default async function AllCategoriesPage() {
       <Hero
         heading="Product Categories"
         description="We've got all your favorite Categories"
-        imageUrl="/store.png"
+        imageUrl="/store.jpg"
         btnLabel="View All Products"
         btnLink="/products"
       />

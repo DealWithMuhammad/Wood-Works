@@ -30,7 +30,7 @@ export default async function ProductsPage() {
       <Hero
         heading="Best and Quality Products"
         description="Affordability, Durability, Fast and Convenient Delivery, Free Shipping and more"
-        imageUrl="/bags.jpg"
+        imageUrl="/product.jpg"
         btnLabel="View All Categories"
         btnLink="/categories"
       />
