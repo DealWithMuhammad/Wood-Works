@@ -28,7 +28,7 @@ export const Navbar = () => {
       <Box className="navbar-wrapper" h={{ base: "120px", md: "0px" }}>
         <Box
           pos="fixed"
-          bgColor={prevScrollPos ? "white" : "transparent"}
+          bgColor={"white"}
           w="100%"
           top={visible ? "0" : "-100px"} // Adjust the value based on the height of your navbar
           transition="top 0.3s ease-in-out"

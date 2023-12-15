@@ -8,45 +8,47 @@ import { BannerSlider } from "./BannerSlider";
 
 export const Banner = () => {
   return (
-    <Box minH="600px" bgColor={"#fef7e9"}>
+    <Box
+      background="linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banner.jpg')"
+      backgroundPosition="center center"
+      backgroundRepeat="no-repeat"
+      backgroundSize="cover"
+      width="100%"
+      height={{ base: "240px", lg: "480px" }}
+      minH={"600px"}
+    >
       <Flex
+        direction="column"
         justify="center"
         align="center"
-        gap="2"
-        flexDir={{ base: "column", lg: "row" }}
-        w={{ base: "100%", lg: "90%" }}
-        mx="auto"
-        p="2rem"
+        height="100%"
+        textAlign="center"
       >
-        <Box w={{ base: "100%", lg: "50%" }}>
-          <Heading size={{ base: "xl", lg: "3xl" }} lineHeight="4rem">
-            Elevate Your Space with <br /> Timeless Furniture
-          </Heading>
-          <Text fontSize={{ base: "md", lg: "lg" }} py="1rem" maxW="600px">
-            Discover exceptional furniture pieces that transform your home into
-            a heaven of comfort and style.
-          </Text>
-          <Link href="/products">
-            <Button
-              borderRadius="50px"
-              minW="10rem"
-              bgColor="brand.primary"
-              color="white"
-              _hover={{ bgColor: "brand.primaryDark" }}
-            >
-              Explore More
-            </Button>
-          </Link>
-        </Box>
-        <Box w={{ base: "100%", lg: "50%" }}>
-          <Box
-            my="2rem"
-            w={{ base: "300px", lg: "600px" }}
-            h={{ base: "300px", lg: "500px" }}
-            bg="center / cover no-repeat url(Retro.jpg)"
-          />
-          {/* <BannerSlider /> */}
-        </Box>
+        <Heading
+          color={"#fff"}
+          size={{ base: "xl", lg: "3xl" }}
+          lineHeight="4rem"
+          fontWeight={"normal"}
+        >
+          Elevate Your Space with <br /> Timeless Furniture
+        </Heading>
+        <Text color={"#fff"} fontSize={{ base: "md", lg: "lg" }} py="1rem">
+          Discover exceptional furniture pieces that transform your home into a
+          heaven of comfort and style.
+        </Text>
+        <Link href="/products">
+          <Button
+            borderRadius="0px"
+            minW="12rem"
+            py={6}
+            bgColor="transparent"
+            border={"1px solid"}
+            color="white"
+            _hover={{ bgColor: "black", border: "1px solid black" }}
+          >
+            Explore More
+          </Button>
+        </Link>
       </Flex>
     </Box>
   );
