@@ -5,7 +5,7 @@ import { AppLogo } from "../AppLogo";
 import { Cart } from "../Cart/Cart";
 import { Wishlist } from "../Wishlist/Wishlist";
 import { Search } from "../Search/Search";
-import { LiaInstagram, LiaWhatsapp } from "react-icons/lia";
+import { LiaFacebook, LiaWhatsapp } from "react-icons/lia";
 
 export function DesktopNav() {
   return (
@@ -36,8 +36,8 @@ Thank you! `}
         >
           <LiaWhatsapp color="green" size={34} />
         </Link>
-        <Link href={"http://www.instgaram.com"}>
-          <LiaInstagram color={"#bc2a8d"} size={38} />
+        <Link href={"http://www.facebook.com"}>
+          <LiaFacebook color={"#316FF6"} size={38} />
         </Link>
       </Stack>
     </Flex>

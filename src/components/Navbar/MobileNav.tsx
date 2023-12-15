@@ -5,7 +5,7 @@ import { AppLogo } from "../AppLogo";
 import { Search } from "../Search/Search";
 import { NavMenu } from "./NavMenu";
 import Link from "next/link";
-import { LiaInstagram, LiaWhatsapp } from "react-icons/lia";
+import { LiaFacebook, LiaInstagram, LiaWhatsapp } from "react-icons/lia";
 
 export function MobileNav() {
   return (
@@ -30,7 +30,7 @@ Thank you! `}
             <LiaWhatsapp color="green" size={36} />
           </Link>
           <Link href={"http://www.instgaram.com"}>
-            <LiaInstagram color={"#bc2a8d"} size={38} />
+            <LiaFacebook color={"#316FF6"} size={38} />
           </Link>
         </Stack>
       </Flex>
