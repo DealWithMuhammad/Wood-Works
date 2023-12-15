@@ -5,8 +5,8 @@ import { buildLegacyTheme } from 'sanity';
 export const colors = {
   brand: {
     primary: '#febe60',
-    primaryLight: 'hsl(337,79%,70%)',
-    primaryDark: 'hsl(337,79%,50%)',
+    primaryLight: '#febe60',
+    primaryDark: '#febe60',
   },
 };
 

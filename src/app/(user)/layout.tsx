@@ -17,7 +17,7 @@ export default function RootLayout({
         <title>SW Work</title>
         <meta title="description" content="Buy any furniture" />
       </head>
-      <body style={{ backgroundColor: "#f4f3ef" }}>
+      <body>
         <CacheProvider>
           <ChakraProvider theme={theme}>
             <Navbar />
