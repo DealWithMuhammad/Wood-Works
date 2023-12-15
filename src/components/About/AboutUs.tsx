@@ -65,10 +65,27 @@ function AboutUs() {
           backgroundRepeat="no-repeat"
           backgroundSize="cover"
           width="100%"
-          height={{ base: "240px", lg: "480px" }} // Set the height as needed
-          // You can add other styling properties as needed
-        >
-          {/* Your content goes here */}
+          height={{ base: "240px", lg: "480px" }}
+        ></Box>
+        <Box>
+          <Flex
+            py="2rem"
+            w={{ base: "100%", lg: "90%" }}
+            direction={{ base: "column", lg: "row" }}
+            justify="space-around"
+            align="center"
+            gap={10}
+            mx="auto"
+            flexWrap="wrap"
+          >
+            <Box>
+              <Image
+                src="https://nooni-be87.kxcdn.com/nooni/wp-content/uploads/2023/08/about-3.jpg"
+                alt="about-us"
+              />
+            </Box>
+            <Box></Box>
+          </Flex>
         </Box>
       </Box>
     </>
