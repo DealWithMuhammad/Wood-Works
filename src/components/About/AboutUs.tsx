@@ -14,18 +14,16 @@ function AboutUs() {
   return (
     <>
       <Box>
-        <Card
-          align="center"
-          justify="space-between"
+        <Box
           overflow="hidden"
           w={{ base: "100%", lg: "90%" }}
           mx="auto"
-          shadow="sm"
+          bgColor={"#f4f3ef"}
           p="2rem"
           pt={{ base: "10", md: "40", lg: "40" }}
         >
           {/* Breadcrumb */}
-          <Flex>
+          <Flex justify={"center"}>
             <Link href={"/"}>
               <Text
                 fontWeight={"thin"}
@@ -41,7 +39,7 @@ function AboutUs() {
             </Text>
             <Box className="black">About us</Box>
           </Flex>
-        </Card>
+        </Box>
         <Box textAlign="center">
           <Heading fontWeight={"medium"} fontSize={{ base: 30, lg: 45 }}>
             About Shahzad Wood Works
