@@ -18,7 +18,6 @@ function AboutUs() {
           overflow="hidden"
           w={{ base: "100%", lg: "90%" }}
           mx="auto"
-          bgColor={"#f4f3ef"}
           p="2rem"
           pt={{ base: "10", md: "40", lg: "40" }}
         >
