@@ -1,4 +1,12 @@
-import { Box, Flex, Link, Image, Text, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Link,
+  Image,
+  Text,
+  Heading,
+  Button,
+} from "@chakra-ui/react";
 import { Banner } from "@src/features/home/Banner";
 import { FeaturedProducts } from "@src/features/home/FeaturedProducts";
 import { TopCategories } from "@src/features/home/TopCategories";
@@ -176,6 +184,54 @@ export default async function Home() {
         title="Most Selling Products"
         products={featuredItems[0].mostSellingProducts}
       />
+      {/* Section 3 */}
+      <Box
+        mt={{ base: 10, lg: 10 }}
+        background={`linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url('banner2.jpg') repeat fixed 0 0`}
+        backgroundPosition="center center"
+        backgroundRepeat="no-repeat"
+        backgroundSize="cover"
+        width="100%"
+        height={{ base: "240px", lg: "380px" }}
+        color={"white"}
+        letterSpacing={3}
+        textAlign={"center"}
+        display="flex"
+        flexDirection="column"
+        justifyContent="center" // This centers vertically
+      >
+        <Text color={"white"}>FURNITURE - LIGHTING</Text>
+        <Heading
+          mt={3}
+          fontSize={{ base: "3xl", lg: "5xl" }}
+          fontWeight={"390"}
+        >
+          Modern And
+        </Heading>
+        <Heading
+          mt={1}
+          fontSize={{ base: "3xl", lg: "5xl" }}
+          fontWeight={"390"}
+        >
+          Contemporary Furniture
+        </Heading>
+        <Link href="/products">
+          <Button
+            borderRadius="0px"
+            minW="12rem"
+            mt={10}
+            py={6}
+            bgColor="transparent"
+            border={"1px solid"}
+            color="white"
+            _hover={{ bgColor: "black", border: "1px solid black" }}
+          >
+            Explore More
+          </Button>
+        </Link>
+      </Box>
+
+      {/* End */}
       <FeaturedProducts
         title="Trending Products"
         products={featuredItems[0].trendingProducts}
