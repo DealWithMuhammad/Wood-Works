@@ -114,6 +114,64 @@ export default async function Home() {
         title="Best Deals For You"
         products={featuredItems[0].bestDeals}
       />
+      {/* Section 2 */}
+      <Flex
+        py="2rem"
+        w={{ base: "100%", lg: "100%" }}
+        justify="space-center"
+        align="center"
+        mx="auto"
+        flexDir={{ base: "column", md: "row" }}
+      >
+        <Box
+          mx={{ base: "11", md: "0", lg: "0" }}
+          ml={{ md: "10", lg: "16" }}
+          letterSpacing={3}
+          textAlign={{ base: "center", md: "left" }}
+          order={{ base: 2, md: 1 }}
+        >
+          <Text fontSize={{ base: "sm", lg: "lg" }} mt={{ base: "4", lg: "0" }}>
+            NEW PRODUCTS
+          </Text>
+          <Heading
+            mt={3}
+            fontSize={{ base: "3xl", lg: "5xl" }}
+            fontWeight={"350"}
+          >
+            The Chair Collection
+          </Heading>
+          <Link href="/product">
+            <Text
+              letterSpacing={1}
+              textDecoration="underline"
+              fontWeight={"bold"}
+              mt={{ base: 3, lg: 6 }}
+            >
+              Shop Now
+            </Text>
+          </Link>
+        </Box>
+        <Box
+          mx={{ base: "11", md: "16", lg: "14" }}
+          position="relative"
+          overflow="hidden"
+          maxW={{ base: "500px", md: "400px", lg: "600px" }}
+          order={{ base: 1, md: 2 }}
+        >
+          <Link href="/products">
+            <Image
+              src="https://nooni-be87.kxcdn.com/nooni/wp-content/uploads/2023/07/banner-8.jpg" // Replace with the actual image URL
+              alt="Your Image"
+              w="100%"
+              h="auto"
+              transition="transform 0.3s ease-in-out"
+              _hover={{ transform: "scale(1.1)" }}
+            />
+          </Link>
+        </Box>
+      </Flex>
+
+      {/* End */}
       <FeaturedProducts
         title="Most Selling Products"
         products={featuredItems[0].mostSellingProducts}
