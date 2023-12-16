@@ -14,6 +14,7 @@ import React from "react";
 function AboutUs() {
   return (
     <>
+      {/* Section 1 */}
       <Box
         overflow="hidden"
         w={{ base: "100%", lg: "90%" }}
@@ -39,6 +40,8 @@ function AboutUs() {
           <Box className="black">About us</Box>
         </Flex>
       </Box>
+      {/* End */}
+      {/* Section-2 */}
       <Box textAlign="center">
         <Heading fontWeight={"medium"} fontSize={{ base: 30, lg: 45 }}>
           About Shahzad Wood Works
@@ -54,6 +57,7 @@ function AboutUs() {
           test of time.
         </Text>
       </Box>
+      {/* End */}
       {/* Hero Image of About Us */}
       <Box
         mt={{ base: 10, lg: 20 }}
@@ -64,6 +68,8 @@ function AboutUs() {
         width="100%"
         height={{ base: "240px", lg: "480px" }}
       ></Box>
+      {/* End */}
+      {/* Section-3 */}
       <Box>
         <Flex
           py="2rem"
@@ -117,6 +123,75 @@ function AboutUs() {
           </Box>
         </Flex>
       </Box>
+      {/* End */}
+      {/* Section-3 */}
+      <Box textAlign={"center"}>
+        <Heading
+          mt={20}
+          fontSize={{ base: "3xl", lg: "5xl" }}
+          fontWeight={"900"}
+          mb={20}
+        >
+          WHY US?
+        </Heading>
+        <Flex
+          py="2rem"
+          w={{ base: "100%", lg: "90%" }}
+          direction={{ base: "column", lg: "row" }}
+          justify="space-around"
+          align="center"
+          gap={10}
+          mx="auto"
+          flexWrap="wrap"
+        >
+          <Box mb={20} maxW={{ base: "100%", md: "30%" }}>
+            <Heading
+              mt={3}
+              fontSize={{ base: "3xl", lg: "2xl" }}
+              fontWeight={"790"}
+            >
+              24/7 Support
+            </Heading>
+            <Text>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+              illo voluptates omnis quos in, numquam eveniet sunt, reiciendis
+              cupiditate ullam tempore, pariatur deserunt eligendi nostrum
+              consequuntur esse minus dignissimos commodi!
+            </Text>
+          </Box>
+          <Box mb={20} maxW={{ base: "100%", md: "30%" }}>
+            <Heading
+              mt={3}
+              fontSize={{ base: "3xl", lg: "2xl" }}
+              fontWeight={"790"}
+            >
+              Free Shipping
+            </Heading>
+            <Text>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+              illo voluptates omnis quos in, numquam eveniet sunt, reiciendis
+              cupiditate ullam tempore, pariatur deserunt eligendi nostrum
+              consequuntur esse minus dignissimos commodi!
+            </Text>
+          </Box>
+          <Box mb={20} maxW={{ base: "100%", md: "30%" }}>
+            <Heading
+              mt={3}
+              fontSize={{ base: "3xl", lg: "2xl" }}
+              fontWeight={"790"}
+            >
+              Refund Anytime
+            </Heading>
+            <Text>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+              illo voluptates omnis quos in, numquam eveniet sunt, reiciendis
+              cupiditate ullam tempore, pariatur deserunt eligendi nostrum
+              consequuntur esse minus dignissimos commodi!
+            </Text>
+          </Box>
+        </Flex>
+      </Box>
+      {/* End */}
       {/* contact */}
       <Box
         mt={{ base: 10, lg: 10 }}
