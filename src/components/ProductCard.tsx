@@ -27,6 +27,8 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             borderRadius="lg"
             boxSize="200px"
             mx="auto"
+            transition="transform 0.3s ease-in-out"
+            _hover={{ transform: "scale(1.1)" }}
           />
         </Link>
         <Stack mt="6" spacing="3">
