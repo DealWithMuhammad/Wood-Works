@@ -150,13 +150,12 @@ function AboutUs() {
               fontSize={{ base: "3xl", lg: "2xl" }}
               fontWeight={"790"}
             >
-              24/7 Support
+              Custom Desgin
             </Heading>
             <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-              illo voluptates omnis quos in, numquam eveniet sunt, reiciendis
-              cupiditate ullam tempore, pariatur deserunt eligendi nostrum
-              consequuntur esse minus dignissimos commodi!
+              Get furniture made just for you! We create special designs that
+              fit your style and space perfectly. Our custom-made pieces turn
+              your ideas into beautiful furniture.
             </Text>
           </Box>
           <Box mb={20} maxW={{ base: "100%", md: "30%" }}>
@@ -165,13 +164,13 @@ function AboutUs() {
               fontSize={{ base: "3xl", lg: "2xl" }}
               fontWeight={"790"}
             >
-              Free Shipping
+              Fast Delivery
             </Heading>
             <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-              illo voluptates omnis quos in, numquam eveniet sunt, reiciendis
-              cupiditate ullam tempore, pariatur deserunt eligendi nostrum
-              consequuntur esse minus dignissimos commodi!
+              Swift and reliable! Experience our fast delivery service, ensuring
+              your furniture reaches you within just 20 days. Enjoy the
+              convenience of timely shipping without compromising on quality or
+              precision.
             </Text>
           </Box>
           <Box mb={20} maxW={{ base: "100%", md: "30%" }}>
@@ -180,13 +179,13 @@ function AboutUs() {
               fontSize={{ base: "3xl", lg: "2xl" }}
               fontWeight={"790"}
             >
-              Refund Anytime
+              20 year warranty
             </Heading>
             <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-              illo voluptates omnis quos in, numquam eveniet sunt, reiciendis
-              cupiditate ullam tempore, pariatur deserunt eligendi nostrum
-              consequuntur esse minus dignissimos commodi!
+              Peace of mind for two decades! Our 20-year warranty ensures your
+              furniture is backed by lasting quality and craftsmanship. Relax
+              and enjoy your purchase, knowing we've got you covered for the
+              long haul.
             </Text>
           </Box>
         </Flex>
@@ -220,7 +219,7 @@ function AboutUs() {
           CONTACT US ON WHATSAPP
         </Text>
 
-        <Link href="/products">
+        <Link href="http://wa.me/+601139865270?text=Hi, I wanted to ask some questions about Shahzad Wood Works">
           <Button
             borderRadius="0px"
             minW="12rem"
@@ -231,12 +230,12 @@ function AboutUs() {
             color="#000"
             backgroundColor={"white"}
             _hover={{
-              bgColor: "red",
+              bgColor: "green",
               border: "1px solid black",
               color: "white",
             }}
           >
-            Explore More
+            CLICK HERE TO CHAT
           </Button>
         </Link>
       </Box>

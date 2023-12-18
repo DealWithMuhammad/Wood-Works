@@ -198,7 +198,7 @@ export default async function Home() {
         textAlign={"center"}
         display="flex"
         flexDirection="column"
-        justifyContent="center" // This centers vertically
+        justifyContent="center"
       >
         <Text color={"white"}>FURNITURE - LIGHTING</Text>
         <Heading
