@@ -9,11 +9,11 @@ import {
   Stack,
   Text,
   VisuallyHidden,
-} from '@chakra-ui/react';
-import { ReactNode } from 'react';
-import { BiMailSend } from 'react-icons/bi';
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
-import { AppLogo } from './AppLogo';
+} from "@chakra-ui/react";
+import { ReactNode } from "react";
+import { BiMailSend } from "react-icons/bi";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { AppLogo } from "./AppLogo";
 
 const SocialButton = ({
   children,
@@ -33,12 +33,12 @@ const SocialButton = ({
       cursor="pointer"
       as="a"
       href={href}
-      display={'inline-flex'}
-      alignItems={'center'}
-      justifyContent={'center'}
-      transition={'background 0.3s ease'}
+      display={"inline-flex"}
+      alignItems={"center"}
+      justifyContent={"center"}
+      transition={"background 0.3s ease"}
       _hover={{
-        bg: 'blackAlpha.200',
+        bg: "blackAlpha.200",
       }}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
@@ -49,7 +49,7 @@ const SocialButton = ({
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
-    <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
+    <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
       {children}
     </Text>
   );
@@ -58,56 +58,58 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 export const Footer = () => {
   return (
     <Box bg="pink.50" color="gray.700" mt="2rem">
-      <Container as={Stack} maxW={'6xl'} py={10}>
+      <Container as={Stack} maxW={"6xl"} py={10}>
         <SimpleGrid
-          templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
+          templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 2fr" }}
           spacing={8}
         >
           <Stack spacing={6}>
             <Box>
               <AppLogo />
             </Box>
-            <Text fontSize="sm">© 2023 Muhammad Ahmad. All rights reserved</Text>
+            <Text fontSize="sm">
+              © 2023 Muhammad Ahmad. All rights reserved
+            </Text>
             <Stack direction="row" spacing={6}>
-              <SocialButton label="Twitter" href={'#'}>
+              <SocialButton label="Twitter" href={"#"}>
                 <FaTwitter />
               </SocialButton>
-              <SocialButton label="Facebook" href={'#'}>
+              <SocialButton label="Facebook" href={"#"}>
                 <FaFacebook />
               </SocialButton>
-              <SocialButton label="Instagram" href={'#'}>
+              <SocialButton label="Instagram" href={"#"}>
                 <FaInstagram />
               </SocialButton>
             </Stack>
           </Stack>
           <Stack align="flex-start">
             <ListHeader>Company</ListHeader>
-            <Link href={'#'}>About us</Link>
-            <Link href={'#'}>Contact us</Link>
-            <Link href={'#'}>Testimonials</Link>
+            <Link href={"/about"}>About us</Link>
+            <Link href={"/contact-us"}>Contact us</Link>
+            <Link href={"#"}>Testimonials</Link>
           </Stack>
           <Stack align="flex-start">
             <ListHeader>Support</ListHeader>
-            <Link href={'#'}>Help Center</Link>
-            <Link href={'#'}>Terms of Service</Link>
-            <Link href={'#'}>Privacy Policy</Link>
+            <Link href={"#"}>Help Center</Link>
+            <Link href={"#"}>Terms of Service</Link>
+            <Link href={"#"}>Privacy Policy</Link>
           </Stack>
           <Stack align="flex-start">
             <ListHeader>Get the best deals</ListHeader>
-            <Stack direction={'row'}>
+            <Stack direction={"row"}>
               <Input
                 placeholder="Your email address"
                 bg="blackAlpha.100"
                 border={0}
                 _focus={{
-                  bg: 'whiteAlpha.300',
+                  bg: "whiteAlpha.300",
                 }}
               />
               <IconButton
                 bg="brand.primary"
                 color="white"
                 _hover={{
-                  bg: 'brand.primaryDark',
+                  bg: "brand.primaryDark",
                 }}
                 aria-label="Subscribe"
                 icon={<BiMailSend />}
