@@ -61,7 +61,7 @@ function AboutUs() {
       {/* Hero Image of About Us */}
       <Box
         mt={{ base: 10, lg: 20 }}
-        backgroundImage="url('https://demo.theme-sky.com/nooni/wp-content/uploads/2023/04/about-parallax-1.jpg')"
+        backgroundImage="url('https://tobel.qodeinteractive.com/wp-content/uploads/2021/04/About-title-img.jpg')"
         backgroundPosition="center center"
         backgroundRepeat="no-repeat"
         backgroundSize="cover"
@@ -87,7 +87,7 @@ function AboutUs() {
           >
             <Link href="/products">
               <Image
-                src="https://demo2.wpopal.com/auros/wp-content/uploads/2018/10/bannerau-1.jpg" // Replace with the actual image URL
+                src="about.jpg" // Replace with the actual image URL
                 alt="Your Image"
                 w="100%"
                 h="auto"
