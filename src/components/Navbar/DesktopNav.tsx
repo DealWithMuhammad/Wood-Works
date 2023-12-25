@@ -4,6 +4,8 @@ import { navItems } from "@/helpers";
 import { Box, Flex, Stack } from "@chakra-ui/react";
 import Link from "next/link";
 import { AppLogo } from "../AppLogo";
+import { Search } from "../Search/Search";
+import { LiaFacebook, LiaWhatsapp } from "react-icons/lia";
 
 export function DesktopNav() {
   return (
@@ -49,7 +51,18 @@ export function DesktopNav() {
             <Link href={navItem.href}>{navItem.label}</Link>
           </Box>
         ))}
+        <Search />
+        <Link
+          href={`http://wa.me/+601139865270?text=Hello! I'm interested in your furniture offerings from Shahzad Wood Works. Can you please provide more information on your products?
+Thank you! `}
+        >
+          <LiaWhatsapp color="green" size={34} />
+        </Link>
+        <Link href={"http://www.facebook.com"}>
+          <LiaFacebook color={"#316FF6"} size={38} />
+        </Link>
       </Stack>
+        
     </Flex>
   );
 }
