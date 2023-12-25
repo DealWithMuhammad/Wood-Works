@@ -20,7 +20,7 @@ export default function RootLayout({
       <body>
         <CacheProvider>
           <ChakraProvider theme={theme}>
-            <NextTopLoader color="red" />
+            <NextTopLoader color="#febe60" />
 
             <Navbar />
             {children}
